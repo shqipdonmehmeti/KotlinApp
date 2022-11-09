@@ -1,15 +1,37 @@
 import kotlinClasses.Employee
+import kotlinClasses.lastDigit
+import java.util.*
 
 fun main() {
-
-   val employee = Employee("Bill Gates",60)
-    println(employee.fullName)
-    employee.fullName = "Mark"
-    println(employee.fullName)
-    println(employee.age)
-    employee.age = 70
+val numberToTest = 567
+ println(numberToTest.lastDigit())
 }
 
+
+fun String.getFirstAndLastCharacter() : String {
+  val firstCharacter = this.first()
+ val lastCharacter = this.last()
+ return "".plus(firstCharacter).plus(lastCharacter)
+}
+
+
+//fun getFirstAndLastCharacter(value : String) : String {
+// val firstCharacter = value.first()
+// val lastCharacter = value.last()
+// return "".plus(firstCharacter).plus(lastCharacter)
+//}
+fun createArrayOfFiveElements() {
+ val numbers = arrayOf(10,20,30,40,50)
+ println(numbers.joinToString())
+}
+
+fun createArrayUntil100() {
+ val numbers = IntArray(100)
+ numbers[0] = 1
+ numbers[9] = 10
+ numbers[99] = 100
+ println(numbers.joinToString(" -> "))
+}
 fun sumOptionOne (a : Int , b : Int , c : Int) = a + b + c // using single expression functions
 
 fun sumOptionTwo (a : Int , b : Int , c : Int) : Int { // using normal fun
@@ -45,12 +67,30 @@ fun printWithIfExpression (firstValue : Int , secondValue : Int) : Int { // reme
 }
 
 fun printWithWhenExpression (value : String) {
- when(value) {
-  "A","B" -> println("Value is A or B")
-  "C","D","E" -> println("Value is C , D or E")
+ when (value) {
+  "A", "B" -> println("Value is A or B")
+  "C", "D", "E" -> println("Value is C , D or E")
   else -> println("Another value")
  }
 }
+
+ fun showFirstAndLastCharacter() {
+  val scanner = Scanner(System.`in`)
+  println("Ju lutem shkruani fjaline")
+  val fjalia = scanner.nextLine()
+
+
+  if (fjalia[0].isLowerCase() && fjalia[fjalia.length - 1].isDigit()) {
+   println("fillon me te vogel dhe mbaron me numer")
+  } else {
+   println("nuk plotesohet kushti")
+  }
+ }
+
+
+
+
+
 
 
 
