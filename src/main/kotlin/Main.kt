@@ -3,8 +3,21 @@ import kotlinClasses.lastDigit
 import java.util.*
 
 fun main() {
-val numberToTest = 567
- println(numberToTest.lastDigit())
+ testLambdaExpressions()
+}
+
+val a = fun (a : Int , b : Int) : Int {
+ return a * b // anonymous functions
+}
+
+val b = { a : Int , b : Int -> a * b } // lambda
+
+fun testLambdaExpressions() {
+ val list = listOf(1,2,3,4,5)
+ val list2 = listOf(10,32,35,47,59)
+ println(list2.map { it * 4 })
+ println(list.map { it * 2 })
+ println(list.filter { numberToFilter -> numberToFilter == 2 })
 }
 
 
